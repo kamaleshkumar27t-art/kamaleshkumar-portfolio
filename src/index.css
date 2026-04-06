@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .light {
+    --background: 220 20% 97%;
+    --foreground: 228 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 228 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 15% 12%;
+
+    --primary: 225 80% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 225 80% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 225 80% 56%;
+
+    --radius: 0.75rem;
+
+    --neon-blue: 225 100% 60%;
+    --neon-purple: 270 100% 65%;
+    --neon-cyan: 185 100% 55%;
+    --glass: 220 20% 94%;
+    --glass-border: 220 15% 85%;
+  }
+
+  .dark {
+    --background: 228 15% 6%;
+    --foreground: 220 20% 92%;
+
+    --card: 228 18% 10%;
+    --card-foreground: 220 20% 92%;
+
+    --popover: 228 18% 10%;
+    --popover-foreground: 220 20% 92%;
+
+    --primary: 225 80% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 228 15% 14%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 225 80% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 228 15% 18%;
+    --input: 228 15% 18%;
+    --ring: 225 80% 56%;
+
+    --radius: 0.75rem;
+
+    --neon-blue: 225 100% 60%;
+    --neon-purple: 270 100% 65%;
+    --neon-cyan: 185 100% 55%;
+    --glass: 228 18% 12%;
+    --glass-border: 228 20% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass/60 backdrop-blur-xl border border-glass-border rounded-xl;
+  }
+
+  .neon-glow-blue {
+    box-shadow: 0 0 20px hsl(225 100% 60% / 0.3), 0 0 60px hsl(225 100% 60% / 0.1);
+  }
+
+  .neon-glow-purple {
+    box-shadow: 0 0 20px hsl(270 100% 65% / 0.3), 0 0 60px hsl(270 100% 65% / 0.1);
+  }
+
+  .neon-text-blue {
+    text-shadow: 0 0 20px hsl(225 100% 60% / 0.5), 0 0 40px hsl(225 100% 60% / 0.2);
+  }
+
+  .neon-text-purple {
+    text-shadow: 0 0 20px hsl(270 100% 65% / 0.5), 0 0 40px hsl(270 100% 65% / 0.2);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-purple;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 px-4 md:px-8;
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1;
+  }
+}
